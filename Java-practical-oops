@@ -1,0 +1,413 @@
+
+
+📁 Program1_Welcome.java
+
+class Program1_Welcome {
+    public static void main(String[] args) {
+        System.out.println("Welcome To Java");
+    }
+}
+
+
+---
+
+📁 Program2_Address.java
+
+class Program2_Address {
+    public static void main(String[] args) {
+        System.out.println("Name: Ramsingh");
+        System.out.println("City: Jaunpur");
+        System.out.println("Course: B.Tech CSE");
+    }
+}
+
+
+---
+
+📁 Program3_Addition.java
+
+import java.util.*;
+
+class Program3_Addition {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter two numbers: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println("Sum = " + (a + b));
+    }
+}
+
+
+---
+
+📁 Program4_Calculator.java
+
+import java.util.*;
+
+class Program4_Calculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a, b and operator: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        char op = sc.next().charAt(0);
+
+        switch(op){
+            case '+': System.out.println(a + b); break;
+            case '-': System.out.println(a - b); break;
+            case '*': System.out.println(a * b); break;
+            case '/': System.out.println(a / b); break;
+            default: System.out.println("Invalid operator");
+        }
+    }
+}
+
+
+---
+
+📁 Program5_MetersToFeet.java
+
+class Program5_MetersToFeet {
+    public static void main(String[] args) {
+        double meter = 10;
+        double feet = meter * 3.28;
+        System.out.println("Feet = " + feet);
+    }
+}
+
+
+---
+
+📁 Program6_QuadraticEquation.java
+
+class Program6_QuadraticEquation {
+    public static void main(String[] args) {
+        int a = 1, b = 5, c = 6;
+        double d = b*b - 4*a*c;
+
+        if(d > 0) System.out.println("Real Roots");
+        else if(d == 0) System.out.println("Equal Roots");
+        else System.out.println("Imaginary Roots");
+    }
+}
+
+
+---
+
+📁 Program7_Fibonacci.java
+
+class Program7_Fibonacci {
+    public static void main(String[] args) {
+        int n = 10, a = 0, b = 1;
+
+        for(int i = 0; i < n; i++){
+            System.out.print(a + " ");
+            int c = a + b;
+            a = b;
+            b = c;
+        }
+    }
+}
+
+
+---
+
+📁 Program8_MatrixMultiplication.java
+
+class Program8_MatrixMultiplication {
+    public static void main(String[] args) {
+        int A[][] = { {1,2,3}, {4,5,6}, {7,8,9} };
+        int B[][] = { {1,2,3}, {4,5,6}, {7,8,9} };
+
+        int C[][] = new int[3][3];
+
+        for(int i=0;i<3;i++)
+            for(int j=0;j<3;j++)
+                for(int k=0;k<3;k++)
+                    C[i][j] += A[i][k] * B[k][j];
+
+        for(int[] row : C){
+            for(int x : row) System.out.print(x + " ");
+            System.out.println();
+        }
+    }
+}
+
+
+---
+
+📁 Program9_Account.java
+
+class Account {
+    int balance = 1000;
+
+    void deposit(int amt){ balance += amt; }
+    void withdraw(int amt){ balance -= amt; }
+}
+
+class Program9_Account {
+    public static void main(String[] args) {
+        Account a = new Account();
+        a.deposit(500);
+        a.withdraw(200);
+        System.out.println("Balance: " + a.balance);
+    }
+}
+
+
+---
+
+📁 Program10_Inheritance.java
+
+class Parent {
+    int x = 10;
+}
+
+class Child extends Parent {
+    void show() {
+        System.out.println(x);
+    }
+}
+
+class Program10_Inheritance {
+    public static void main(String[] args) {
+        Child obj = new Child();
+        obj.show();
+    }
+}
+
+
+---
+
+📁 Program11_Polymorphism.java
+
+class Poly {
+    int sum(int a, int b){ return a + b; }
+    int sum(int a, int b, int c){ return a + b + c; }
+}
+
+class Program11_Polymorphism {
+    public static void main(String[] args) {
+        Poly p = new Poly();
+        System.out.println(p.sum(2,3));
+        System.out.println(p.sum(2,3,4));
+    }
+}
+
+
+---
+
+📁 Program12_MethodOverriding.java
+
+class A {
+    void show(){ System.out.println("Parent"); }
+}
+
+class B extends A {
+    void show(){ System.out.println("Child"); }
+}
+
+class Program12_MethodOverriding {
+    public static void main(String[] args) {
+        B obj = new B();
+        obj.show();
+    }
+}
+
+
+---
+
+📁 Program13 (Package Program)
+
+📁 File 1: mypackage/Student.java
+
+package mypackage;
+
+public class Student {
+    public void display(){
+        System.out.println("Hello from Student package");
+    }
+}
+
+📁 File 2: Program13_Package.java
+
+import mypackage.Student;
+
+class Program13_Package {
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.display();
+    }
+}
+
+
+---
+
+📁 Program14_ExceptionHandling.java
+
+class Program14_ExceptionHandling {
+    public static void main(String[] args) {
+        try {
+            int x = 10 / 0;
+        } catch(Exception e) {
+            System.out.println("Exception caught");
+        }
+    }
+}
+
+
+---
+
+📁 Program15_RunnableThread.java
+
+class MyThread implements Runnable {
+    public void run() {
+        System.out.println("Thread running");
+    }
+}
+
+class Program15_RunnableThread {
+    public static void main(String[] args) {
+        Thread t = new Thread(new MyThread());
+        t.start();
+    }
+}
+
+
+---
+
+📁 Program16_StudentInterface.java
+
+interface Student {
+    void info();
+}
+
+class UG implements Student {
+    public void info(){ System.out.println("UG Student"); }
+}
+
+class PG implements Student {
+    public void info(){ System.out.println("PG Student"); }
+}
+
+class Program16_StudentInterface {
+    public static void main(String[] args) {
+        new UG().info();
+        new PG().info();
+    }
+}
+
+
+---
+
+📁 Program17_ThreadExtend.java
+
+class MyThread2 extends Thread {
+    public void run(){
+        System.out.println("Thread running using extends");
+    }
+}
+
+class Program17_ThreadExtend {
+    public static void main(String[] args) {
+        new MyThread2().start();
+    }
+}
+
+
+---
+
+📁 Program18_Collections.java
+
+import java.util.*;
+
+class Program18_Collections {
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(10);
+        list.add(20);
+
+        Vector<Integer> vec = new Vector<>();
+        vec.add(30);
+        vec.add(40);
+
+        System.out.println(list);
+        System.out.println(vec);
+    }
+}
+
+
+---
+
+📁 Program19_JDBC_Display.java
+
+// JDBC program template for display
+class Program19_JDBC_Display {
+    public static void main(String[] args) {
+        System.out.println("JDBC Display Program");
+    }
+}
+
+
+---
+
+📁 Program20_JDBC_Insert.java
+
+// JDBC program template for insert
+class Program20_JDBC_Insert {
+    public static void main(String[] args) {
+        System.out.println("JDBC Insert Program");
+    }
+}
+
+
+---
+
+📁 Program21_JDBC_Delete.java
+
+// JDBC program template for delete
+class Program21_JDBC_Delete {
+    public static void main(String[] args) {
+        System.out.println("JDBC Delete Program");
+    }
+}
+
+
+---
+
+📁 Program22_JDBC_DisplayValues.java
+
+// JDBC program template for display values
+class Program22_JDBC_DisplayValues {
+    public static void main(String[] args) {
+        System.out.println("JDBC Display Values Program");
+    }
+}
+
+
+---
+
+📁 Program23_GUICalculator.java
+
+import javax.swing.*;
+import java.awt.*;
+
+class Program23_GUICalculator {
+    public static void main(String[] args) {
+        JFrame f = new JFrame("Calculator");
+        f.setLayout(new GridLayout(4,4));
+
+        for(int i=1; i<=9; i++)
+            f.add(new JButton(""+i));
+
+        f.add(new JButton("+"));
+        f.add(new JButton("-"));
+        f.add(new JButton("*"));
+        f.add(new JButton("/"));
+
+        f.setSize(300,300);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}
